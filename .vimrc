@@ -2,7 +2,7 @@
 call pathogen#infect()
 
 " Font size
-set gfn=Menlo:h13
+set gfn=Menlo:h10
 
 " Line numbers
 set nu
@@ -33,7 +33,7 @@ colorscheme Monokai-Refined
 " autocmd vimenter * NERDTree
 
 " Tags
-set tags=~/.tags
+" set tags=~/.tags
 
 " Java auto-complete
 set complete=.,w,b,u,t,i
