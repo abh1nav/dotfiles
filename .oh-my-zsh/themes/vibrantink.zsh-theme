@@ -73,9 +73,9 @@ fi
 
 # Check if we are on SSH or not
 if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then 
-    eval host='$bold$golden_yellow$remote_session_prefix%m$reset'     # aye, SSH
+    eval host='$bold$candy_purple$remote_session_prefix%m$reset'     # aye, SSH
 else
-    eval host='$bold$golden_yellow$string_local$reset'      # nay, local
+    eval host='$bold$candy_purple$string_local$reset'      # nay, local
 fi
 
 #Variables...assemble!
@@ -87,7 +87,7 @@ local current_dir='$bold$dark_grey${PWD/#$HOME/~}$reset'
 local git_branch='$(git_prompt_info)$reset'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY=" $vcs_dirty$electric_green"
+ZSH_THEME_GIT_PROMPT_DIRTY=" $vcs_dirty$sunset_orange"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$env_suffix$reset"
 
 add-zsh-hook precmd build_prompt
@@ -105,7 +105,7 @@ build_prompt () {
     [ $(git status &>/dev/null) $? -eq "0" ] && {
         git_name=$(git rev-parse --show-toplevel)
         git_repo=$(basename ${git_name})$vcs_separator
-        local git_status="$electric_green$env_prefix$git$git_repo$git_branch"
+        local git_status="$sunset_orange$env_prefix$git$git_repo$git_branch"
     }
 
     # Actual prompt construction
