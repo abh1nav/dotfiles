@@ -14,3 +14,8 @@ alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 # Load local customizations
 alias ll='ls -lh'
 source $HOME/.localzshrc
+
+# TMUX
+alias tma='tmux attach -d -t'
+alias tmg='tmux new -s $(basename $(pwd))'
+alias tm='tmux new -s '
