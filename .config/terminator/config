@@ -5,8 +5,9 @@
   tab_position = hidden
 [keybindings]
   hide_window = <Shift><Control>a
-  split_horiz = <Primary><Shift>h
-  split_vert = <Primary><Shift>v
+  split_horiz = <Control><Shift>x
+  split_vert = <Control><Shift>z
+  new_tab = <Primary>t
   switch_to_tab_1 = <Primary>1
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3
