@@ -1,3 +1,6 @@
+" Set leader
+let mapleader = ","
+
 " Pathogen
 call pathogen#infect()
 
@@ -30,7 +33,11 @@ set lbr
 colorscheme Monokai-Refined
 
 " Automatically open NERDTree
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
+" NERDTree shortcuts
+nnoremap <Leader>nn :NERDTree %:h<CR>
+nnoremap <Leader>nt :NERDTreeToggle %:h<CR>
+nnoremap <Leader>nc :NERDTreeClose<CR>
 
 " Tags
 " set tags=~/.tags
@@ -45,5 +52,5 @@ set complete=.,w,b,u,t,i
 set vb
 
 " Quick edit and reload vimrc
-nnoremap <leader>rv :source $HOME/.vimrc<cr>
-nnoremap <leader>rv :source $HOME/.vimrc<cr>
+nnoremap <Leader>rv :e ~/.vimrc<CR>
+nnoremap <Leader>rv :source ~/.vimrc<CR>
