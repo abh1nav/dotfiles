@@ -43,3 +43,7 @@ set complete=.,w,b,u,t,i
 
 " Bells
 set vb
+
+" Quick edit and reload vimrc
+nnoremap <leader>rv :source $HOME/.vimrc<cr>
+nnoremap <leader>rv :source $HOME/.vimrc<cr>
