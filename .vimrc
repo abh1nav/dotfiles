@@ -5,7 +5,7 @@ let mapleader = ","
 call pathogen#infect()
 
 " Font size
-set gfn=Menlo:h10
+set gfn=Menlo:h14
 
 " Line numbers
 set nu
@@ -34,10 +34,12 @@ colorscheme Monokai-Refined
 
 " Automatically open NERDTree
 autocmd vimenter * NERDTree
+" Even if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " NERDTree shortcuts
-nnoremap <Leader>nn :NERDTree %:h<CR>
-nnoremap <Leader>nt :NERDTreeToggle %:h<CR>
-nnoremap <Leader>nc :NERDTreeClose<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " Tags
 " set tags=~/.tags
