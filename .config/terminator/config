@@ -1,6 +1,5 @@
 [global_config]
   title_transmit_bg_color = "#d30102"
-  focus = mouse
   tab_position = hidden
 [keybindings]
 [profiles]
@@ -28,7 +27,7 @@
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = default
+      profile = solarized-dark
     [[[window0]]]
       type = Window
       parent = ""
