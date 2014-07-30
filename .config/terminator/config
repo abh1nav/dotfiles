@@ -1,7 +1,21 @@
 [global_config]
-  title_transmit_bg_color = "#d30102"
+  title_inactive_bg_color = "#000000"
   tab_position = hidden
 [keybindings]
+  hide_window = <Shift><Control>a
+  split_horiz = <Control><Shift>x
+  split_vert = <Control><Shift>z
+  new_tab = <Primary>t
+  switch_to_tab_1 = <Primary>1
+  switch_to_tab_2 = <Primary>2
+  switch_to_tab_3 = <Primary>3
+  switch_to_tab_4 = <Primary>4
+  switch_to_tab_5 = <Primary>5
+  switch_to_tab_6 = <Primary>6
+  switch_to_tab_7 = <Primary>7
+  switch_to_tab_8 = <Primary>8
+  switch_to_tab_9 = <Primary>9
+  switch_to_tab_10 = <Primary>0
 [profiles]
   [[default]]
     scrollbar_position = hidden
@@ -9,19 +23,28 @@
     use_system_font = False
     font = Droid Sans Mono 12
     scrollback_lines = 10000
-    palette = "#073642:#d30102:#859900:#b58900:#6c71c4:#d33682:#2aa198:#839496:#586e75:#cb4b16:#859900:#b58900:#268bd2:#dc322f:#2aa198:#93a1a1"
-    cursor_color = "#002b36"
-    foreground_color = "#002b36"
-    background_color = "#eee8d5"
-  [[solarized-dark]]
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-    font = Droid Sans Mono 12
+    scroll_on_output = False
+    color_scheme = custom
+    scrollback_infinite = True
+    background_darkness = 0.83
     palette = "#073642:#d30102:#859900:#b58900:#6c71c4:#d33682:#2aa198:#839496:#586e75:#cb4b16:#859900:#b58900:#268bd2:#dc322f:#2aa198:#93a1a1"
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
     background_color = "#002b36"
+  [[solarized-light]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    font = Droid Sans Mono 12
+    scrollback_lines = 10000
+    scroll_on_output = False
+    color_scheme = custom
+    scrollback_infinite = True
+    background_darkness = 0.83
+    palette = "#073642:#d30102:#859900:#b58900:#6c71c4:#d33682:#2aa198:#839496:#586e75:#cb4b16:#859900:#b58900:#268bd2:#dc322f:#2aa198:#93a1a1"
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
+    background_color = "#eee8d5"
 [layouts]
   [[default]]
     [[[child1]]]
