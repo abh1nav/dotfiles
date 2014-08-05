@@ -29,6 +29,9 @@ set hls 	" Highlight search
 " Wrap text
 set lbr
 
+" Enable mouse-foo
+set mouse=a
+
 " Colour scheme
 colorscheme Monokai-Refined
 
@@ -54,5 +57,5 @@ set complete=.,w,b,u,t,i
 set vb
 
 " Quick edit and reload vimrc
-nnoremap <Leader>rv :e ~/.vimrc<CR>
+nnoremap <Leader>ev :e ~/.vimrc<CR>
 nnoremap <Leader>rv :source ~/.vimrc<CR>
