@@ -18,6 +18,7 @@ filetype indent on
 set autoindent
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " Python indenting
 let g:pyindent_continue = '&sw'
