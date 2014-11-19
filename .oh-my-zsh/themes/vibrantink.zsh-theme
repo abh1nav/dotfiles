@@ -19,6 +19,7 @@
 ###
 
 # Load some modules
+autoload -U add-zsh-hook
 autoload -U colors zsh/terminfo
 colors
 setopt prompt_subst
