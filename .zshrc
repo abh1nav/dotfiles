@@ -20,3 +20,20 @@ source $HOME/.localzshrc
 alias tma='tmux attach -d -t'
 alias tmg='tmux new -s $(basename $(pwd))'
 alias tm='tmux new -s '
+
+# Docker helpers
+alias dockerps='docker ps -a'
+
+fn dockerrmi() {
+	IMAGES=$(docker images -f dangling=true -qa)
+	if [ "$IMAGES" = "" ]; then
+		echo Nothing to delete
+	else
+		echo $IMAGES
+		docker rmi $IMAGES
+	fi
+}
+
+fn dockerip() {
+	docker inspect -f '{{ .NetworkSettings.IPAddress }}' $1
+}
