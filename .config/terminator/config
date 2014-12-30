@@ -1,11 +1,10 @@
 [global_config]
   title_inactive_bg_color = "#000000"
-  tab_position = hidden
 [keybindings]
-  hide_window = <Shift><Control>a
+  new_tab = <Primary>t
   split_horiz = <Control><Shift>x
   split_vert = <Control><Shift>z
-  new_tab = <Primary>t
+  hide_window = <Shift><Control>a
   switch_to_tab_1 = <Primary>1
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3
@@ -19,32 +18,34 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-    font = Droid Sans Mono 12
-    scrollback_lines = 10000
-    scroll_on_output = False
-    color_scheme = custom
-    scrollback_infinite = True
-    background_darkness = 0.83
     palette = "#073642:#d30102:#859900:#b58900:#6c71c4:#d33682:#2aa198:#839496:#586e75:#cb4b16:#859900:#b58900:#268bd2:#dc322f:#2aa198:#93a1a1"
+    background_image = None
+    background_darkness = 0.83
+    scrollback_lines = 10000
+    use_system_font = False
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
+    scroll_on_output = False
+    show_titlebar = False
+    color_scheme = custom
+    font = Droid Sans Mono 12
     background_color = "#002b36"
+    scrollback_infinite = True
   [[solarized-light]]
     scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-    font = Droid Sans Mono 12
-    scrollback_lines = 10000
-    scroll_on_output = False
-    color_scheme = custom
-    scrollback_infinite = True
-    background_darkness = 0.83
     palette = "#073642:#d30102:#859900:#b58900:#6c71c4:#d33682:#2aa198:#839496:#586e75:#cb4b16:#859900:#b58900:#268bd2:#dc322f:#2aa198:#93a1a1"
+    background_image = None
+    background_darkness = 0.83
+    scrollback_lines = 10000
+    use_system_font = False
     cursor_color = "#002b36"
     foreground_color = "#002b36"
+    scroll_on_output = False
+    show_titlebar = False
+    color_scheme = custom
+    font = Droid Sans Mono 12
     background_color = "#eee8d5"
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
