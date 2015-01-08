@@ -4,6 +4,9 @@ ZSH_THEME="vibrantink"
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 
+# Colours!
+export TERM=xterm-256color
+
 # Example format: plugins=(rails git textmate ruby lighthouse)
 DISABLE_AUTO_UPDATE="true"
 plugins=(git)
