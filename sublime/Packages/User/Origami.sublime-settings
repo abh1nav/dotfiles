@@ -1,0 +1,32 @@
+[
+  // Move around
+  { "keys": ["alt+x", "up"], "command": "travel_to_pane", "args": {"direction": "up"} },
+  { "keys": ["alt+x", "right"], "command": "travel_to_pane", "args": {"direction": "right"} },
+  { "keys": ["alt+x", "down"], "command": "travel_to_pane", "args": {"direction": "down"} },
+  { "keys": ["alt+x", "left"], "command": "travel_to_pane", "args": {"direction": "left"} },
+  
+  // Copy files to pane
+  { "keys": ["alt+x", "alt+shift+up"], "command": "clone_file_to_pane", "args": {"direction": "up"} },
+  { "keys": ["alt+x", "alt+shift+right"], "command": "clone_file_to_pane", "args": {"direction": "right"} },
+  { "keys": ["alt+x", "alt+shift+down"], "command": "clone_file_to_pane", "args": {"direction": "down"} },
+  { "keys": ["alt+x", "alt+shift+left"], "command": "clone_file_to_pane", "args": {"direction": "left"} },
+  
+  // Destroy
+  { "keys": ["alt+x", "alt+x"], "command": "destroy_pane", "args": {"direction": "self"} },
+  
+  // Create panes with files
+  { "keys": ["alt+x", "alt+up"], "command": "create_pane_with_file", "args": {"direction": "up"} },
+  { "keys": ["alt+x", "alt+right"], "command": "create_pane_with_file", "args": {"direction": "right"} },
+  { "keys": ["alt+x", "alt+down"], "command": "create_pane_with_file", "args": {"direction": "down"} },
+  { "keys": ["alt+x", "alt+left"], "command": "create_pane_with_file", "args": {"direction": "left"} },
+
+  // Create empty panes
+  { "keys": ["alt+x", "ctrl+alt+up"], "command": "create_pane", "args": {"direction": "up"} },
+  { "keys": ["alt+x", "ctrl+alt+right"], "command": "create_pane", "args": {"direction": "right"} },
+  { "keys": ["alt+x", "ctrl+alt+down"], "command": "create_pane", "args": {"direction": "down"} },
+  { "keys": ["alt+x", "ctrl+alt+left"], "command": "create_pane", "args": {"direction": "left"} },
+  
+  // Resize
+  { "keys": ["alt+x", "ctrl+c"], "command": "resize_pane", "args": {"orientation": "cols"} },
+  { "keys": ["alt+x", "ctrl+r"], "command": "resize_pane", "args": {"orientation": "rows"} }
+]
