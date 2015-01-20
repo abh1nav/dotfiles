@@ -40,3 +40,7 @@ fn dockerrmi() {
 fn dockerip() {
 	docker inspect -f '{{ .NetworkSettings.IPAddress }}' $1
 }
+
+fn dockermysql() {
+    docker run --name mysql -e MYSQL_ROOT_PASSWORD=hodor -d mysql:5.5
+}
