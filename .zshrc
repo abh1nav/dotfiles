@@ -42,5 +42,5 @@ fn dockerip() {
 }
 
 fn dockermysql() {
-    docker run --name mysql -e MYSQL_ROOT_PASSWORD=hodor -d mysql:5.5
+    docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=hodor -d mysql:5.5
 }
