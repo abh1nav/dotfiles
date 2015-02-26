@@ -27,6 +27,11 @@ alias tm='tmux new -s '
 # Docker helpers
 alias dockerps='docker ps -a'
 
+# List occupied ports by pid
+fn ports() {
+	netstat -tulpn
+}
+
 fn dockerrmi() {
 	IMAGES=$(docker images -f dangling=true -qa)
 	if [ "$IMAGES" = "" ]; then
