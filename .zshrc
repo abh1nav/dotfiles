@@ -31,11 +31,11 @@ fn ports() {
 
 # IPTables
 fn ipt-show() {
-	iptables -vnL $1 --line-numbers
+	sudo iptables -vnL $1 --line-numbers
 }
 
 fn ipt-del() {
-	iptables -D $1 $2
+	echo iptables -D INPUT 13
 }
 
 # Some docker helpers
