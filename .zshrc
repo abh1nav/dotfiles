@@ -24,13 +24,22 @@ alias tma='tmux attach -d -t'
 alias tmg='tmux new -s $(basename $(pwd))'
 alias tm='tmux new -s '
 
-# Docker helpers
-alias dockerps='docker ps -a'
-
 # List occupied ports by pid
 fn ports() {
 	netstat -tulpn
 }
+
+# IPTables
+fn ipt-show() {
+	iptables -vnL $1 --line-numbers
+}
+
+fn ipt-del() {
+	iptables -D $1 $2
+}
+
+# Some docker helpers
+alias dockerps='docker ps -a'
 
 fn dockerrmi() {
 	IMAGES=$(docker images -f dangling=true -qa)
