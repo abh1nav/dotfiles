@@ -1,6 +1,6 @@
 // Install Afterglow theme using Package control - "Theme - Afterglow"
 {
-	"theme": "Afterglow-blue.sublime-theme",
+    "theme": "Afterglow-blue.sublime-theme",
     "color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
     "tabs_small": true,
     "tabs_padding_small": true,
@@ -8,10 +8,10 @@
     "sidebar_row_padding_medium": true,
     "status_bar_brighter": true,
     "color_inactive_tabs": true,
-	"font_face": "Droid Sans Mono",
-	"font_size": 14.0,
-	"ignored_packages":
-	[
-		"Vintage"
-	]
+    "font_face": "Droid Sans Mono",
+    "font_size": 14.0,
+    "ignored_packages":
+    [
+        "Vintage"
+    ]
 }
