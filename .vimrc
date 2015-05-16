@@ -39,30 +39,21 @@ set mouse=a
 " Colour scheme
 colorscheme Monokai-Refined
 
+" NERDTree
 " Automatically open NERDTree
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 " Even if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " NERDTree shortcuts
 map <C-n> :NERDTreeToggle<CR>
 
-" Tags
-" set tags=~/.tags
-
-" Java auto-complete
-set complete=.,w,b,u,t,i
-
 " Folding
-" set foldmethod=indent
+"set foldmethod=indent
 
 " Bells
 set vb
-
-" Quick edit and reload vimrc
-nnoremap <Leader>ev :e ~/.vimrc<CR>
-nnoremap <Leader>rv :source ~/.vimrc<CR>
 
 " Go
 "let g:go_fmt_command = "goimports"
@@ -74,11 +65,15 @@ nnoremap <Leader>rv :source ~/.vimrc<CR>
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
-
 " Remap autocomplete to C-space
 inoremap <C-Space> <C-x><C-o>
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = 'find %s -type f'
