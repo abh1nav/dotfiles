@@ -19,6 +19,11 @@ cd ~
 ln -s ~/.dotfiles/.zshrc
 touch .localzshrc
 
+# Tmux setup
+echo Setting up tmux
+cd ~
+ln -s ~/.dotfiles/.tmux.conf
+
 # Vim setup
 echo Vim setup
 mkdir ~/.vim
@@ -36,8 +41,17 @@ echo Installing Airline
 git clone https://github.com/bling/vim-airline.git
 echo Installing vim-go
 git clone https://github.com/fatih/vim-go.git
+echo Installing vim-fugitive \(For git branch display\)
+git clone https://github.com/tpope/vim-fugitive.git
 
-# Tmux setup
-echo Setting up tmux
-cd ~
-ln -s ~/.dotfiles/.tmux.conf
+# Installing 
+echo Installing syntastic
+git clone https://github.com/scrooloose/syntastic.git
+echo Install Syntastic checkers using: 
+echo Python: sudo pip install pylint
+echo JavaScript: sudo npm install -g jshint
+echo Go: install gofmt and govet normally
+
+# Fonts
+echo Look in the fonts directory to install patched powerline fonts for powerline to work properly.
+echo Also, setup iTerms profile to point to the patched version of Droid Sans Mono.

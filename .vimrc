@@ -1,11 +1,19 @@
+" Set encoding
+set encoding=utf-8
+
 " Set leader
 let mapleader = ","
+
+" Set Term properties
+set t_Co=256
+set term=xterm-256color
+set termencoding=utf-8
 
 " Pathogen
 call pathogen#infect()
 
-" Font size
-set gfn=Droid\ Sans\ Mono\ 10
+" GUI Font
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
 
 " Line numbers
 set nu
@@ -56,19 +64,24 @@ map <C-n> :NERDTreeToggle<CR>
 set vb
 
 " Go
-"let g:go_fmt_command = "goimports"
-"let g:go_highlight_functions = 1
-"let g:go_highlight_methods = 1
-"let g:go_highlight_structs = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+" :Lint will run golint
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" :w will automatically run golint
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Remap autocomplete to C-space
 inoremap <C-Space> <C-x><C-o>
 
@@ -77,3 +90,22 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'find %s -type f'
+
+" Airline configuration
+" Enable the list of buffers across the top
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" Make airline appear even though there are no splits
+set laststatus=2
+" Fix fucked up fonts on OS X
+let g:airline_powerline_fonts = 1
+" Set default airline theme
+let g:airline_theme = "luna"
+
+" MacVim Buffer Movement
+" Tell macvim to skip it's own gvimrc
+let macvim_skip_cmd_opt_movement = 1
+" MacVim movement remaps
+map <M-Right> :bn!<CR>
+map <M-Left> :bp!<CR>
