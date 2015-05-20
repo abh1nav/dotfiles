@@ -43,6 +43,8 @@ echo Installing vim-go
 git clone https://github.com/fatih/vim-go.git
 echo Installing vim-fugitive \(For git branch display\)
 git clone https://github.com/tpope/vim-fugitive.git
+echo Installing Bbye \(Close buffers without deleting the window\)
+git clone https://github.com/moll/vim-bbye.git
 
 # Installing 
 echo Installing syntastic

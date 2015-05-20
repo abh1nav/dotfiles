@@ -109,3 +109,6 @@ let macvim_skip_cmd_opt_movement = 1
 " MacVim movement remaps
 map <M-Right> :bn!<CR>
 map <M-Left> :bp!<CR>
+
+" Map ,+q to Bdelete (executed by vim-bbye)
+nnoremap <Leader>q :Bdelete<CR>
