@@ -29,6 +29,11 @@ fn ports() {
 	netstat -tulpn
 }
 
+# List large files in the current directory
+fn large-files() {
+    du -h . | grep '[0-9]\{3\}M'
+}
+
 # IPTables
 fn ipt-show() {
 	sudo iptables -vnL $1 --line-numbers
