@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+if err != nil {
+	log.Printf("${1:Error occurred} because: %s\n", err.Error())
+	${2:return nil, err}
+}
+]]></content>
+	<tabTrigger>err</tabTrigger>
+	<scope>source.go</scope>
+	<description>Error check - like half of all Go code ever written.</description>
+</snippet>
