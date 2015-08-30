@@ -73,15 +73,6 @@ set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 " :w will automatically run golint
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " Remap autocomplete to C-space
 inoremap <C-Space> <C-x><C-o>
 
