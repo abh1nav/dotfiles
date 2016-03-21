@@ -2340,6 +2340,10 @@ background-position: left top !important;
     border-bottom-color: rgb(34, 68, 102) !important;
     color: #eee;
 }
+
+.site-header {
+	background-color: transparent;
+}
 /*
  * 
  * End Customization
