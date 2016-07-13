@@ -1,0 +1,33 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Dockerfile Syntax Highlighting",
+		"ES6-Toolkit",
+		"Fix Mac Path",
+		"GitGutter",
+		"GoGuru",
+		"GoSublime",
+		"Jade",
+		"JavaScriptNext - ES6 Syntax",
+		"JSHint",
+		"JSX",
+		"LESS",
+		"Package Control",
+		"Redux Snippets",
+		"Sass",
+		"SassBeautify",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-contrib-pug-lint",
+		"SublimeLinter-contrib-sass-lint",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jsxhint",
+		"Theme - Cobalt2"
+	]
+}

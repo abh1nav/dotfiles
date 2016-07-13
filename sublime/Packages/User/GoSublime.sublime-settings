@@ -1,7 +1,18 @@
 {
-	"env": {
-		"GOPATH": "$HOME/go",
-		"PATH": "$PATH:$GOPATH/bin"
-	},
-	"fmt_cmd": ["goimports"]
+	"autocomplete_closures": true,
+    "complete_builtins": true,
+    "comp_lint_enabled": true,
+    "comp_lint_commands": [
+        {"cmd": ["golint *.go"], "shell": true},
+        {"cmd": ["go", "vet"]},
+        {"cmd": ["go", "install"]}
+    ],
+    "env": {
+        "GOPATH": "$HOME/go",
+        "PATH": "$PATH:$GOPATH/bin"
+    },
+    "fmt_cmd": ["goimports"],
+    "on_save": [
+        {"cmd": "gs_comp_lint"}
+    ]
 }

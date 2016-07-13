@@ -1,0 +1,19 @@
+{
+    // The output can either be one of: 'buffer', 'output_panel'
+    // Buffers can hold results from more than one invocation
+    // Output panels sit underneath the editor area and are easily dismissed
+    "goguru_output": "buffer",
+
+    // print debug info to the terminal
+    "goguru_debug": true,
+
+    // Set guru's output to json
+    "goguru_json": false,
+
+    // env overwrites the default shell environment vars
+    // e.g "env": { "GOPATH": "$HOME/go/bin:$PATH" }
+    // not used when goguru_use_golangconfig is set to true
+    "goguru_env": {
+        "GOPATH": "$HOME/go"
+    },
+}

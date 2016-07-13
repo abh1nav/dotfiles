@@ -1,12 +1,13 @@
 {
+	"additional_path_items": ["~/go/bin"],
 	"bold_folder_labels": true,
-	"caret_extra_bottom": 1,
-	"caret_extra_top": 1,
-	"caret_extra_width": 2,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 3,
 	"caret_style": "phase",
 	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
 	"draw_white_space": "all",
-	"font_size": 12,
+	"font_size": 16,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -23,5 +24,5 @@
 	"sidebar_font_small": true,
 	"sidebar_medium": true,
 	"theme": "Cobalt2.sublime-theme",
-	"wide_caret": false
+	"wide_caret": true
 }

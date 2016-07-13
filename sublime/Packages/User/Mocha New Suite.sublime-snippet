@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+'use strict';
+
+const expect = require('chai').expect;
+
+describe('${1:suite_name}', () => {
+  it('${2:first_case}', () => {
+  	${3:test_content}
+  });
+});
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mocha</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

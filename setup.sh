@@ -28,8 +28,8 @@ ln -s ~/.dotfiles/.tmux.conf
 echo Vim setup
 mkdir ~/.vim
 cd ~/.vim
-ln -s ~/.dotfiles/autoload
-ln -s ~/.dotfiles/colors
+ln -s ~/.dotfiles/.vim/autoload
+ln -s ~/.dotfiles/.vim/colors
 mkdir bundle
 echo Installing vim plugins
 cd bundle
