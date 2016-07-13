@@ -11,6 +11,7 @@ Plugins
 * LESS  
 * Side Bar  
 * GoSublime  
+* GoGuru  
 * SublimeCodeIntel  
 * SublimeLinter  
 * [Cobalt2](https://github.com/wesbos/Cobalt2-iterm) Theme by Wes Bos  
