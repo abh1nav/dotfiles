@@ -2358,9 +2358,10 @@ background-position: left top !important;
     border: none;
 }
 
-.merge-status-item {
-    border: none;
-    background: transparent !important;
+.merge-status-item, .last-review-thread, .review-thread, .review-thread-reply {
+    border: none !important;
+    background-color: transparent !important;
+    background: none !important;
 }
 
 .user-profile-nav, .profile-timeline-year-list, .profile-timeline-card-wrapper, .profile-timeline-card-wrapper, .bg-white, .discussion-item-icon, .is-stuck, .user-profile-sticky-bar::after, .subset-files-tab, .form-actions {
