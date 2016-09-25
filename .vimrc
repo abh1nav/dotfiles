@@ -91,8 +91,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 set laststatus=2
 " Fix fucked up fonts on OS X
 let g:airline_powerline_fonts = 1
-" Set default airline theme
-let g:airline_theme = "luna"
 
 " MacVim Buffer Movement
 " Tell macvim to skip it's own gvimrc
