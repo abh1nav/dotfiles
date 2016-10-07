@@ -2407,6 +2407,10 @@ rect[fill="#1e6823"] {
     border-bottom: solid 2px #282828 !important;
 }
 
+.cm-s-github.CodeMirror {
+    background: transparent !important;
+}
+
 /*
  * 
  * End Customization
