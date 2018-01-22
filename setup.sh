@@ -26,6 +26,7 @@ ln -s ~/.dotfiles/.tmux.conf
 
 # Vim setup
 echo Vim setup
+ln -s ~/.dotfiles/.vimrc
 mkdir ~/.vim
 cd ~/.vim
 ln -s ~/.dotfiles/.vim/autoload

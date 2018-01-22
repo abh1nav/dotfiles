@@ -11,13 +11,11 @@ export TERM=xterm-256color
 DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+# The git plugin had this bad idea
+unalias gm
 
 # Pretty git log
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-
-# Load local customizations
-alias ll='ls -lh'
-source $HOME/.localzshrc
 
 # TMUX
 alias tma='tmux attach -d -t'
@@ -29,12 +27,24 @@ fn large-files() {
     du -h . | grep '[0-9]\{3\}M'
 }
 
-# IPTables
-fn ipt-show() {
-	sudo iptables -vnL $1 --line-numbers
-}
+# Golang
+export GOPATH="$HOME/go"
 
-fn ipt-del() {
-	echo iptables -D INPUT 13
-}
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Virtualenv
+export WORKON_HOME="$HOME/.venvs"
+
+# PATH mods
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
+
+# Aliases
+alias ll='ls -la'
+alias kc='kubectl'
+
+# Load local customizations
+source $HOME/.localzshrc
 
