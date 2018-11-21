@@ -45,6 +45,13 @@ export PATH="$PATH:$HOME/.yarn/bin"
 alias ll='ls -la'
 alias kc='kubectl'
 
+## Functions ##
+# Kubernetes get secret
+function get_secret {
+    kubectl get secret $@ -o json | jq '.data | map_values(@base64d)'
+}
+alias get_secret="get_secret"
+
 # Load local customizations
 source $HOME/.localzshrc
 
