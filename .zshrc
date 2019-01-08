@@ -44,6 +44,8 @@ export PATH="$PATH:$HOME/.yarn/bin"
 # Aliases
 alias ll='ls -la'
 alias kc='kubectl'
+# lowercase the uuidgen output in MacOS
+alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 
 ## Functions ##
 # Kubernetes get secret
