@@ -59,6 +59,13 @@ alias kc='kubectl'
 # lowercase the uuidgen output in MacOS
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 
+# Keybindings
+bindkey -M vicmd '^A'  beginning-of-line
+bindkey -M vicmd '^E'  end-of-line
+bindkey -M vicmd '^K'  kill-line
+bindkey -M vicmd '^W'  backward-kill-word
+bindkey -M vicmd '^U'  backward-kill-line
+
 ## Functions ##
 # Kubernetes get secret
 function get_secret {
