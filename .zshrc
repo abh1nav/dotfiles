@@ -29,6 +29,7 @@ fn large-files() {
 
 # Golang
 export GOPATH="$HOME/go"
+export GOPRIVATE="github.com/twitsprout"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
