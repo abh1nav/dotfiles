@@ -44,6 +44,9 @@ alias ll='ls -la'
 alias kc='kubectl'
 # lowercase the uuidgen output in MacOS
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias cr="cd $HOME/cr"
+alias cg="cd $HOM/go/src/github.com/twitsprout"
+
 
 # Keybindings
 bindkey -M vicmd '^A'  beginning-of-line
