@@ -45,7 +45,7 @@ alias kc='kubectl'
 # lowercase the uuidgen output in MacOS
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias cr="cd $HOME/cr"
-alias cg="cd $HOM/go/src/github.com/twitsprout"
+alias cg="cd $HOME/go/src/github.com/twitsprout"
 
 
 # Keybindings
