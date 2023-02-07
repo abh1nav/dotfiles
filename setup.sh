@@ -47,14 +47,6 @@ git clone https://github.com/tpope/vim-fugitive.git
 echo Installing Bbye \(Close buffers without deleting the window\)
 git clone https://github.com/moll/vim-bbye.git
 
-# Installing 
-echo Installing syntastic
-git clone https://github.com/scrooloose/syntastic.git
-echo Install Syntastic checkers using: 
-echo Python: sudo pip install pylint
-echo JavaScript: sudo npm install -g jshint
-echo Go: install gofmt and govet normally
-
 # Fonts
 echo Look in the fonts directory to install patched powerline fonts for powerline to work properly.
 echo Also, setup iTerms profile to point to the patched version of Droid Sans Mono.
