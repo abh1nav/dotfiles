@@ -64,4 +64,3 @@ alias get_secret="get_secret"
 
 # Load local customizations
 source $HOME/.localzshrc
-
