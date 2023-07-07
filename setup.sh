@@ -47,6 +47,15 @@ git clone https://github.com/tpope/vim-fugitive.git
 echo Installing Bbye \(Close buffers without deleting the window\)
 git clone https://github.com/moll/vim-bbye.git
 
+# Install tools based on OS
+if [[ $(uname) == "Darwin" ]]; then
+    source ./setup-mac.sh
+# elif command -v apt > /dev/null; then
+#     source ./setup-deb.sh
+else
+    echo 'skipping tools install'
+fi
+
 # Fonts
 echo Look in the fonts directory to install patched powerline fonts for powerline to work properly.
 echo Also, setup iTerms profile to point to the patched version of Droid Sans Mono.
