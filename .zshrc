@@ -14,8 +14,13 @@ source $ZSH/oh-my-zsh.sh
 # The git plugin had this bad idea
 unalias gm
 
-# Pretty git log
+# Git
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+export GPG_TTY=$(tty)
+
+# Vim
+alias vi='nvim'
+alias vim='nvim'
 
 # TMUX
 alias tma='tmux attach -d -t'
@@ -36,12 +41,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # PATH mods
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/tools/bin"
 
 # Aliases
-alias ll='ls -la'
+alias ls='exa -h'
+alias ll='exa -lh'
+alias la='exa -lha'
 alias kc='kubectl'
+alias cr="cd $HOME/cr"
+alias cg="cd $HOME/go/src/github.com/twitsprout"
+
 # lowercase the uuidgen output in MacOS
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias cr="cd $HOME/cr"

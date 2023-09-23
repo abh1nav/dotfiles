@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # Working directory
-cd ~
+cd $HOME
 
 # Reset
 echo Delete any existing files
-rm -Rf .oh-my-zsh .myzsh .tmux.conf .vim .vimrc .zshrc
+rm -Rf .oh-my-zsh .myzsh .tmux.conf .vim .vimrc .zshrc .nvm
 
 # Clone oh-my-zsh and link theme
 echo Setup oh-my-zsh
@@ -18,6 +18,15 @@ echo Linking zshrc
 cd ~
 ln -s ~/.dotfiles/.zshrc
 touch .localzshrc
+
+# Install nvm
+cd ~
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh |  bash
+
+# Install nvchad
+cd ~
+mkdir -p ~/.config
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
 # Fonts
 echo Look in the fonts directory to install patched powerline fonts for powerline to work properly.
