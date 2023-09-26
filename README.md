@@ -27,6 +27,11 @@ brew install zsh git git-cola tmux exa neovim curl go ripgrep
 <Space> f b
 ```
 
+#### Close buffer
+```
+<Space> x
+```
+
 #### Find in files
 ```
 <Space> f w
@@ -52,6 +57,8 @@ Manage packages (like LSPs, linters, formatters) with [Mason](https://github.com
 ```
 :MasonInstallAll
 ```
+
+To find a symbol definition, press `g d` when your cursor is on the symbol.
 
 ### Install go formatters
 
