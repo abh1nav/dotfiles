@@ -5,7 +5,13 @@
 ## Pre-requisites
 
 ```
-brew install zsh git git-cola tmux exa neovim curl go ripgrep
+brew install zsh git git-cola tmux exa neovim curl go ripgrep   
+```
+
+Install rustup
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 ## NeoVim Setup
@@ -32,7 +38,7 @@ brew install zsh git git-cola tmux exa neovim curl go ripgrep
 <Space> x
 ```
 
-#### Find in files
+#### Live grep
 ```
 <Space> f w
 ```
