@@ -33,7 +33,7 @@ local plugins = {
     end,
   },
   {
-    "rustlang/rust.vim",
+    "rust-lang/rust.vim",
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 1
@@ -48,7 +48,7 @@ local plugins = {
     end
   },
   {
-    "saecki/crates.vim",
+    "saecki/crates.nvim",
     dependencies = "hrsh7th/nvim-cmp",
     ft = {"rust", "toml"},
     config = function(_, opts)

@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="vibrantink"
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="false"
 COMPLETION_WAITING_DOTS="true"
 
 # Colours!
@@ -36,12 +36,16 @@ fn large-files() {
 export GOPATH="$HOME/go"
 export GOPRIVATE="github.com/twitsprout"
 
+# Rust
+export RUSTUP_HOME="$HOME/.config/rustup"
+export CARGO_HOME="$HOME/.config/cargo"
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # PATH mods
-export PATH="$PATH:$GOPATH/bin:$HOME/tools/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/tools/bin:$HOME/.config/cargo/bin"
 
 # Aliases
 alias ls='exa -h'
