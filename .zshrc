@@ -54,7 +54,7 @@ alias la='exa -lha'
 alias kc='kubectl'
 alias cr="cd $HOME/cr"
 alias cg="cd $HOME/go/src/github.com/twitsprout"
-alias f="fd --type f --hidden --exclude .git --exclude .cache --exclude node_modules --exclude vendor | fzf-tmux -p --reverse | xargs nvim"
+alias f="fd --type f --hidden --follow --max-results 1000 --exclude .git --exclude .cache --exclude node_modules --exclude vendor | fzf-tmux -p --reverse | xargs nvim"
 alias temp="curl https://wttr.in/pickering\?format\=3"
 
 # lowercase the uuidgen output in MacOS
