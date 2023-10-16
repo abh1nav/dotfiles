@@ -52,7 +52,7 @@ alias ls='exa -h'
 alias ll='exa -lh'
 alias la='exa -lha'
 alias kc='kubectl'
-alias cr="cd $HOME/cr"
+alias cr="cd $HOME/src"
 alias cg="cd $HOME/go/src/github.com/twitsprout"
 alias f="fd --type f --hidden --follow --max-results 1000 --exclude .git --exclude .cache --exclude node_modules --exclude vendor | fzf-tmux -p --reverse | xargs nvim"
 alias temp="curl https://wttr.in/pickering\?format\=3"
