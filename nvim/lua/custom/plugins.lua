@@ -4,7 +4,11 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
-        "rust-analyzer"
+        "rust-analyzer",
+        "pyright",
+        "mypy",
+        "ruff",
+        "black",
       },
     },
   },

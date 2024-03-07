@@ -59,16 +59,6 @@ alias temp="curl https://wttr.in/pickering\?format\=3"
 
 # lowercase the uuidgen output in MacOS
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
-alias cr="cd $HOME/cr"
-alias cg="cd $HOME/go/src/github.com/twitsprout"
-
-
-# Keybindings
-bindkey -M vicmd '^A'  beginning-of-line
-bindkey -M vicmd '^E'  end-of-line
-bindkey -M vicmd '^K'  kill-line
-bindkey -M vicmd '^W'  backward-kill-word
-bindkey -M vicmd '^U'  backward-kill-line
 
 ## Functions ##
 # Kubernetes get secret
@@ -79,3 +69,4 @@ alias get_secret="get_secret"
 
 # Load local customizations
 source $HOME/.localzshrc
+
