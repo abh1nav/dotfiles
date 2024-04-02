@@ -3,12 +3,17 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "gopls",
-        "rust-analyzer",
-        "pyright",
-        "mypy",
-        "ruff",
         "black",
+        "goimports-reviser",
+        "golines",
+        "gopls",
+        "lua-language-server",
+        "html-lsp",
+        "mypy",
+        "pyright",
+        "rust-analyzer",
+        "ruff",
+        "stylua",
       },
     },
   },
@@ -18,6 +23,39 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "cmake",
+        "csv",
+        "dockerfile",
+        "git_config",
+        "gitignore",
+        "go",
+        "gomod",
+        "gosum",
+        "html",
+        "http",
+        "javascript",
+        "json",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "proto",
+        "python",
+        "scss",
+        "ssh_config",
+        "svelte",
+        "terraform",
+        "toml",
+        "tsv",
+        "typescript",
+        "vim",
+        "yaml",
+      }
+    }
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
