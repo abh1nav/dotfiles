@@ -16,7 +16,8 @@ brew install \
     go \
     ripgrep \
     fzf \
-    fd 
+    fd \
+    warp
 ```
 
 Install rustup
@@ -36,14 +37,6 @@ Manage packages (like LSPs, linters, formatters) with [Mason](https://github.com
 ```
 
 To find a symbol definition, press `g d` when your cursor is on the symbol.
-
-### Link the custom lua scripts
-
-```
-cd ~/.config/nvim/lua
-rm -Rf custom
-ln -s $HOME/.dotfiles/nvim/lua/custom
-```
 
 ### NvChad key bindings
 
