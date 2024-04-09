@@ -5,7 +5,16 @@ cd $HOME
 
 # Reset
 echo Delete any existing files
-rm -Rf .oh-my-zsh .myzsh .tmux.conf .vim .vimrc .zshrc .nvm .config/starship.toml
+rm -Rf .oh-my-zsh \
+        .myzsh \
+        .tmux.conf \
+        .vim \
+        .vimrc \
+        .zshrc \
+        .nvm \
+        .config/starship.toml \
+        .config/nvim \
+        .tmux
 
 # Make sure .config exists
 mkdir -p $HOME/.config
@@ -26,6 +35,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 # Install nvchad
 git clone https://github.com/NvChad/NvChad $HOME/.config/nvim --depth 1
+
+# Install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # Link nvim customizations
 cd $HOME/.config/nvim/lua
