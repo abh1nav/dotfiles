@@ -27,7 +27,7 @@ $time\
 # and use the os module below
 [username]
 show_always = true
-style_user = "bg:#FFFFFF fg:#61696E"
+style_user = "bg:#FFFFFF fg:#3B4248"
 style_root = "bg:#ff0000"
 format = '[ $user ]($style)'
 disabled = false
@@ -35,7 +35,7 @@ disabled = false
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "bg:#FFFFFF fg:#61696E"
+style = "bg:#FFFFFF fg:#3B4248"
 disabled = false # Disabled by default
 
 [os.symbols]
@@ -51,31 +51,36 @@ style = "bg:#33658A"
 format = '[  $time ]($style)'
 
 [directory]
-style = "bg:#F1D592 fg:#61696E"
+style = "bg:#F1D592 fg:#3B4248"
 format = "[  $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
+
+[line_break]
+disabled = false
 
 # Tools
 [docker_context]
 symbol = " "
 style = "bg:#4e8fe2 fg:#FFFFFF"
-format = '[ $symbol $context ]($style)'
+# format = '[ $symbol $context ]($style)'
+format = ""
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D fg:#61696E"
+style = "bg:#FCA17D fg:#3B4248"
+truncation_length = 20
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D fg:#61696E"
+style = "bg:#FCA17D fg:#3B4248"
 format = '[$all_status$ahead_behind ]($style)'
 
 # Language specific setup
 [golang]
-symbol = " "
+symbol = ""
 style = "bg:#86BBD8 fg:#555555"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [nodejs]
 symbol = ""

@@ -99,6 +99,23 @@ local plugins = {
       crates.show()
     end,
   },
+  {
+    "alexghergh/nvim-tmux-navigation",
+    config = function()
+      require("nvim-tmux-navigation").setup({})
+      vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", {})
+      vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", {})
+      vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
+      vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
+    end,
+  },
+  {
+    "L3MON4D3/LuaSnip",
+	  -- follow latest release.
+	  version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	  -- install jsregexp (optional!).
+	  build = "make install_jsregexp"
+  },
 }
 
 return plugins

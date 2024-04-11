@@ -29,6 +29,11 @@ alias tma='tmux attach -d -t'
 alias tmg='tmux new -s $(basename $(pwd))'
 alias tm='tmux new -s '
 
+# New keybinding for clear-screen
+# because Ctrl+L is taken by vim motions
+# in tmux.
+# bindkey '^[^;' clear-screen
+
 # List large files in the current directory
 fn large-files() {
     du -h . | grep '[0-9]\{3\}M'
@@ -36,7 +41,7 @@ fn large-files() {
 
 # Golang
 export GOPATH="$HOME/go"
-export GOPRIVATE="github.com/twitsprout"
+export GOPRIVATE="github.com/twitsprout,github.com/abh1nav"
 
 # Rust
 export RUSTUP_HOME="$HOME/.config/rustup"
