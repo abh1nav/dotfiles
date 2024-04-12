@@ -1,4 +1,11 @@
-local plugins = {
+return {
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
+  },
   {
     "williamboman/mason.nvim",
     opts = {
@@ -20,8 +27,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require "configs.lspconfig"
     end,
   },
   {
@@ -61,7 +67,7 @@ local plugins = {
     "jose-elias-alvarez/null-ls.nvim",
     ft = "go",
     opts = function()
-      return require "custom.configs.null-ls"
+      return require "configs.null-ls"
     end,
   },
   {
@@ -100,16 +106,6 @@ local plugins = {
     end,
   },
   {
-    "alexghergh/nvim-tmux-navigation",
-    config = function()
-      require("nvim-tmux-navigation").setup({})
-      vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", {})
-      vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", {})
-      vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
-      vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
-    end,
-  },
-  {
     "L3MON4D3/LuaSnip",
 	  -- follow latest release.
 	  version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
@@ -117,5 +113,3 @@ local plugins = {
 	  build = "make install_jsregexp"
   },
 }
-
-return plugins

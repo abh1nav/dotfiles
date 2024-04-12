@@ -17,7 +17,7 @@ brew install \
     ripgrep \
     fzf \
     fd \
-    warp
+    starship
 ```
 
 Install rustup

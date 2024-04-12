@@ -33,17 +33,16 @@ ln -s $HOME/.dotfiles/starship.toml
 cd $HOME
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-# Install nvchad
-git clone https://github.com/NvChad/NvChad $HOME/.config/nvim --depth 1
+# Link nvim config
+cd $HOME/.config
+rm -Rf nvim
+ln -s $HOME/.dotfiles/nvim
 
-# Install tmux plugin manager
+# Link tmux config and install Tmux Plugin Manager
+cd $HOME
+ln -s $HOME/.dotfiles/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-
-# Link nvim customizations
-cd $HOME/.config/nvim/lua
-rm -Rf custom
-ln -s $HOME/.dotfiles/nvim/lua/custom
 
 # Fonts
 echo Look in the fonts directory to install the RobotoMonoNerd font.
-echo Setup Warp to use the RobotoMonoNerd font.
+

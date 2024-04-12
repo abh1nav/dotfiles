@@ -7,14 +7,20 @@ COMPLETION_WAITING_DOTS="true"
 # Colours!
 export TERM=xterm-256color
 
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Uncomment this block to use oh-my-zsh (and comment out the starship block below)
+# # # # # # oh-my-zsh start # # # # # #
 # DISABLE_AUTO_UPDATE="true"
 # plugins=(git)
 # source $ZSH/oh-my-zsh.sh
-# The git plugin had this bad idea
+# # The git plugin had this bad idea
 # unalias gm
-
+# # # # # # oh-my-zsh end # # # # # #
+# 
+# Uncomment this block to use starship (and comment out the oh-my-zsh block above)
+#
+# # # # # # starship start # # # # # #
 eval "$(starship init zsh)"
+# # # # # # starship end # # # # # #
 
 # Git
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -25,14 +31,12 @@ alias vi='nvim'
 alias vim='nvim'
 
 # TMUX
-alias tma='tmux attach -d -t'
+# Create new tmux session with the provided name
+alias tm='tmux new -s ' # Example: tm api-server
+# Attach to an existing tmux session with the given name
+alias tma='tmux attach -d -t' # Example: tma api-server
+# Create new tmux session with the name of the current folder
 alias tmg='tmux new -s $(basename $(pwd))'
-alias tm='tmux new -s '
-
-# New keybinding for clear-screen
-# because Ctrl+L is taken by vim motions
-# in tmux.
-# bindkey '^[^;' clear-screen
 
 # List large files in the current directory
 fn large-files() {
@@ -50,6 +54,7 @@ export CARGO_HOME="$HOME/.config/cargo"
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # PATH mods
 export PATH="$PATH:$GOPATH/bin:$HOME/tools/bin:$HOME/.config/cargo/bin"
@@ -66,13 +71,6 @@ alias temp="curl https://wttr.in/pickering\?format\=3"
 
 # lowercase the uuidgen output in MacOS
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
-
-## Functions ##
-# Kubernetes get secret
-function get_secret {
-    kubectl get secret $@ -o json | jq '.data | map_values(@base64d)'
-}
-alias get_secret="get_secret"
 
 # Load local customizations
 source $HOME/.localzshrc
