@@ -26,22 +26,12 @@ lspconfig.gopls.setup {
   },
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "rust" },
-  root_dir = util.root_pattern("Cargo.toml"),
-  settings = {
-    ['rust-analyzer'] = {
-      cargo = {
-        allFeatures = true
-      },
-    },
-  },
-}
-
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {"python"},
 })
+
+lspconfig.lua_ls.setup({})
+vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, { desc = "[L]SP [H]over"})
+vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, { desc = "[L]SP [C]ode [A]ction"})
