@@ -16,7 +16,8 @@ brew install \
     go \
     ripgrep \
     fzf \
-    fd 
+    fd \
+    warp
 ```
 
 Install rustup
@@ -35,45 +36,6 @@ Manage packages (like LSPs, linters, formatters) with [Mason](https://github.com
 :MasonInstallAll
 ```
 
-To find a symbol definition, press `g d` when your cursor is on the symbol.
+## Tmux Setup
 
-### Link the custom lua scripts
-
-```
-cd ~/.config/nvim/lua
-rm -Rf custom
-ln -s $HOME/.dotfiles/nvim/lua/custom
-```
-
-### NvChad key bindings
-
-#### Change theme
-```
-<Space> t h
-```
-
-#### Find files
-```
-<Space> f f
-```
-
-#### Find buffer
-```
-<Space> f b
-```
-
-#### Close buffer
-```
-<Space> x
-```
-
-#### Live grep
-```
-<Space> f w
-```
-
-#### Switch between buffers
-```
-<Tab>
-```
-
+In a tmux pane, run `<Leader>I` to ask TPM to install all plugins defined in the `.tmux.conf`.

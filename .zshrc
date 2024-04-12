@@ -1,18 +1,20 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="vibrantink"
-DISABLE_AUTO_TITLE="false"
+# ZSH=$HOME/.oh-my-zsh
+# ZSH_THEME="vibrantink"
+# DISABLE_AUTO_TITLE="false"
 COMPLETION_WAITING_DOTS="true"
 
 # Colours!
 export TERM=xterm-256color
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-DISABLE_AUTO_UPDATE="true"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# DISABLE_AUTO_UPDATE="true"
+# plugins=(git)
+# source $ZSH/oh-my-zsh.sh
 # The git plugin had this bad idea
-unalias gm
+# unalias gm
+
+eval "$(starship init zsh)"
 
 # Git
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -27,6 +29,11 @@ alias tma='tmux attach -d -t'
 alias tmg='tmux new -s $(basename $(pwd))'
 alias tm='tmux new -s '
 
+# New keybinding for clear-screen
+# because Ctrl+L is taken by vim motions
+# in tmux.
+# bindkey '^[^;' clear-screen
+
 # List large files in the current directory
 fn large-files() {
     du -h . | grep '[0-9]\{3\}M'
@@ -34,7 +41,7 @@ fn large-files() {
 
 # Golang
 export GOPATH="$HOME/go"
-export GOPRIVATE="github.com/twitsprout"
+export GOPRIVATE="github.com/twitsprout,github.com/abh1nav"
 
 # Rust
 export RUSTUP_HOME="$HOME/.config/rustup"
