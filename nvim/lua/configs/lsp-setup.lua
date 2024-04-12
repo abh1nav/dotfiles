@@ -5,6 +5,11 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 
+-- LSP Keymaps
+vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, { desc = "[L]SP [H]over"})
+vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, { desc = "[L]SP [C]ode [A]ction"})
+
+-- LSP Server config
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -33,5 +38,5 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.lua_ls.setup({})
-vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, { desc = "[L]SP [H]over"})
-vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, { desc = "[L]SP [C]ode [A]ction"})
+
+lspconfig.tsserver.setup({})

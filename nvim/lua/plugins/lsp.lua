@@ -25,7 +25,7 @@ return {
       "williamboman/mason-lspconfig.nvim"
     },
     config = function()
-      require("lua.configs.lsp-setup")
+      require("configs.lsp-setup")
     end,
   },
 }
