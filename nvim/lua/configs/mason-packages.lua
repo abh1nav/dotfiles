@@ -8,7 +8,6 @@ return {
   "dockerls",
   "docker_compose_language_service",
   "eslint",
-  "flux_lsp",
   "gopls",
   "html",
   "htmx",

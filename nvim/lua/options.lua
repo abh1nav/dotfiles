@@ -13,4 +13,3 @@ o.relativenumber = true
 o.foldlevel = 20
 o.foldmethod = "indent"
 o.foldexpr = "nvim_treesitter#foldexpr()"
-

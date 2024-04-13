@@ -2,19 +2,19 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
-local util = require("lspconfig/util")
+local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
 
 -- LSP Keymaps
-vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, { desc = "[L]SP [H]over"})
-vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, { desc = "[L]SP [C]ode [A]ction"})
+vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "[L]SP [H]over" })
+vim.keymap.set("n", "<leader>lca", vim.lsp.buf.code_action, { desc = "[L]SP [C]ode [A]ction" })
 
 -- LSP Server config
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  cmd = {"gopls"},
-  filetypes = {"go", "gomod", "gotmpl", "gosum", "gowork"},
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gotmpl", "gosum", "gowork" },
   root_dir = util.root_pattern("go.mod", ".git"),
   settings = {
     gopls = {
@@ -31,12 +31,12 @@ lspconfig.gopls.setup {
   },
 }
 
-lspconfig.pyright.setup({
+lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"python"},
-})
+  filetypes = { "python" },
+}
 
-lspconfig.lua_ls.setup({})
+lspconfig.lua_ls.setup {}
 
-lspconfig.tsserver.setup({})
+lspconfig.tsserver.setup {}
