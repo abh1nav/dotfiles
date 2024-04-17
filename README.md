@@ -17,7 +17,8 @@ brew install \
     ripgrep \
     fzf \
     fd \
-    starship
+    starship \
+    lazygit
 ```
 
 Install rustup
