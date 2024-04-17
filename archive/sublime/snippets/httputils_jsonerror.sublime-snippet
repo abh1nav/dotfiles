@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-httputils.WriteJSONError(w, "${1: Error description} "+err.Error(), ${2:400})
-return
-]]></content>
-	<tabTrigger>httperr</tabTrigger>
-	<scope>source.go</scope>
-	<description>httputils.WriteJSONError</description>
-</snippet>
