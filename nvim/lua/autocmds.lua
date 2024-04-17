@@ -1,26 +1,10 @@
-local vim = vim
-local api = vim.api
-
-local M = {}
-
---- Helper: takes a list of commands and turns them into autocommands
---- Taken from https://github.com/norcalli/nvim_utils
-function M.nvim_create_augroups(definitions)
-  for group_name, definition in pairs(definitions) do
-    api.nvim_command("augroup " .. group_name)
-    api.nvim_command "autocmd!"
-    for _, def in ipairs(definition) do
-      local command = table.concat(vim.tbl_flatten { "autocmd", def }, " ")
-      api.nvim_command(command)
-    end
-    api.nvim_command "augroup END"
-  end
-end
-
-local autoCommands = {
-  open_folds = {
-    { "BufReadPost,FileReadPost", "*", "normal zR" },
-  },
-}
-
-M.nvim_create_augroups(autoCommands)
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
