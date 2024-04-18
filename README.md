@@ -10,7 +10,7 @@ brew install \
     git \
     git-cola \
     tmux \
-    exa \
+    eza \
     neovim \
     curl \
     go \

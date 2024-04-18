@@ -77,9 +77,9 @@ addToPathTail $CARGO_HOME/bin
 addToPathTail $HOME/tools/bin
 #
 # Other aliases
-alias ls='exa -h'
-alias ll='exa -lh'
-alias la='exa -lha'
+alias ls='eza -h'
+alias ll='eza -lh'
+alias la='eza -lha'
 alias kc='kubectl'
 alias cr="cd $HOME/src"
 alias cg="cd $HOME/go/src/github.com/twitsprout"
