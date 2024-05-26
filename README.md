@@ -18,7 +18,8 @@ brew install \
     fzf \
     fd \
     starship \
-    lazygit
+    jesseduffield/lazygit/lazygit \
+    jesseduffield/lazydocker/lazydocker
 ```
 
 Install rustup
