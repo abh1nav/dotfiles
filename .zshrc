@@ -43,6 +43,14 @@ eval "$(starship init zsh)"
 #
 export GPG_TTY=$(tty)
 export EDITOR='nvim'
+
+# History
+source <(fzf --zsh)
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 #
 # Vim aliases
 alias vi='nvim'
