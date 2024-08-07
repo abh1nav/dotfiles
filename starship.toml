@@ -1,3 +1,5 @@
+command_timeout = 3000
+
 format = """
 [](#FFFFFF)\
 $os\

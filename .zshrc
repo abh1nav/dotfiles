@@ -36,6 +36,7 @@ export TERM=xterm-256color
 #
 # Uncomment this block to use starship (and comment out the oh-my-zsh block above)
 # # # # # # starship start # # # # # #
+export STARSHIP_CONFIG=$HOME/.config/starship.toml
 eval "$(starship init zsh)"
 # # # # # # starship end # # # # # #
 #
