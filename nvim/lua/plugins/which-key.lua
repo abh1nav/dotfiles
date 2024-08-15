@@ -32,6 +32,7 @@ return { -- Useful plugin to show you pending keybinds.
       { "<leader>s_", hidden = true },
       { "<leader>w", group = "[W]orkspace" },
       { "<leader>w_", hidden = true },
+      { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
     }
   end,
 }
