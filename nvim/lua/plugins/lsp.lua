@@ -104,13 +104,21 @@ return { -- LSP Configuration & Plugins
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    local nvim_lspconfig = require "lspconfig"
     local servers = {
       gopls = {},
       -- Some languages (like typescript) have entire language plugins that can be useful:
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      ts_ls = {},
+      ts_ls = {
+        root_dir = nvim_lspconfig.util.root_pattern "package.json",
+        single_file_support = false,
+      },
+
+      denols = {
+        root_dir = nvim_lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+      },
 
       lua_ls = {
         -- cmd = {...},

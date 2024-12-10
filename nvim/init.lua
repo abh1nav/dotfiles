@@ -86,3 +86,8 @@ require "keybindings"
 
 -- Custom auto commands
 require "autocmds"
+
+-- Deno LSP requirement
+vim.g.markdown_fenced_languages = {
+  "ts=typescript",
+}
