@@ -96,8 +96,6 @@ return { -- LSP Configuration & Plugins
     capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
     -- Enable the following language servers
-    --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-    --
     --  Add any additional override configuration in the following tables. Available keys are:
     --  - cmd (table): Override the default command used to start the server
     --  - filetypes (table): Override the default list of associated filetypes for the server
@@ -106,11 +104,10 @@ return { -- LSP Configuration & Plugins
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local nvim_lspconfig = require "lspconfig"
     local servers = {
+      -- Go
       gopls = {},
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
+
+      -- TypeScript setup should account for Deno
       ts_ls = {
         root_dir = nvim_lspconfig.util.root_pattern "package.json",
         single_file_support = false,
@@ -120,17 +117,16 @@ return { -- LSP Configuration & Plugins
         root_dir = nvim_lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
       },
 
+      -- Use Jedi for Python
+      jedi_language_server = {},
+
+      -- Lua setup
       lua_ls = {
-        -- cmd = {...},
-        -- filetypes = { ...},
-        -- capabilities = {},
         settings = {
           Lua = {
             completion = {
               callSnippet = "Replace",
             },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- diagnostics = { disable = { 'missing-fields' } },
           },
         },
       },
