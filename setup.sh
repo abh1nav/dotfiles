@@ -48,6 +48,16 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 cd $HOME
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
+# Check if Ghostty is installed
+if command -v ghostty > /dev/null 2>&1; then
+  echo "Ghostty is installed, linking config"
+  mkdir -p $HOME/.config/ghostty
+  ln -s $HOME/.dotfiles/ghostty/config $HOME/.config/ghostty/config
+else
+  echo "Ghostty is not installed, skipping config"
+fi
+
+
 # Fonts
 echo Look in the fonts directory to install the RobotoMonoNerd font.
 echo Look in the iterm-themes directory to install the iTerm theme.

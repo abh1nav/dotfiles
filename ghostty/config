@@ -1,0 +1,13 @@
+cursor-style = block
+font-family = RobotoMono Nerd Font
+font-family-bold = RobotoMono Nerd Font Mono Bd
+font-family-italic = RobotoMono Nerd Font Mono It
+font-family-bold-italic = RobotoMono Nerd Font Mono Bd It
+font-thicken = true
+font-size = 22
+macos-non-native-fullscreen = visible-menu
+quick-terminal-screen = mouse
+quick-terminal-autohide = true
+shell-integration = zsh
+shell-integration-features = no-cursor
+theme = catppuccin-frappe
