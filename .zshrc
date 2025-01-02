@@ -102,5 +102,10 @@ alias temp="curl https://wttr.in/pickering\?format\=3"
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 
 # Load local customizations
-source $HOME/.localzshrc
+if [[ -f "$HOME/.localzshrc" ]]; then
+    source $HOME/.localzshrc
+fi
 
+if [[ -f "$HOME/.local/bin/env" ]]; then
+    source "$HOME/.local/bin/env"
+fi
