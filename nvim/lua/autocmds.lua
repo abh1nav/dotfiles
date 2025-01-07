@@ -17,6 +17,13 @@ local function set_language_config()
     vim.opt.softtabstop = 4
     vim.opt.expandtab = true
   end
+
+  if filetype == "python" then
+    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 4
+    vim.opt.softtabstop = 4
+    vim.opt.expandtab = true
+  end
 end
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
