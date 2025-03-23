@@ -70,6 +70,8 @@ alias tmg='tmux new -s $(basename $(pwd))'
 #
 # Git alias
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+# Only keep local branches that exist on remote
+alias brsync="git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d"
 #
 # Golang
 export GOPATH="$HOME/go"
