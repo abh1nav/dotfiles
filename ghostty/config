@@ -11,3 +11,4 @@ quick-terminal-autohide = true
 shell-integration = zsh
 shell-integration-features = no-cursor
 theme = catppuccin-frappe
+keybind = shift+enter=text:\n
