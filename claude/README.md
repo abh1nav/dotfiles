@@ -15,7 +15,7 @@ claude mcp add playwright npx @playwright/mcp@latest
 Sequential thinking for breaking down complex problems into manageable steps:
 
 ```shell
-claude mcp add playwright npx @modelcontextprotocol/server-sequential-thinking
+claude mcp add sequential-thinking npx @modelcontextprotocol/server-sequential-thinking
 ```
 
 Invoke this by adding `--seq` to the end of any prompt.
@@ -25,7 +25,7 @@ Invoke this by adding `--seq` to the end of any prompt.
 Context7 allows you to fetch up to date docs and examples for usage in development.
 
 ```
-claude mcp add context7 @upstash/context7-mcp
+claude mcp add context7 npx @upstash/context7-mcp
 ```
 
 From the Context7 docs:
