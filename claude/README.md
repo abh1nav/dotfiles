@@ -42,3 +42,44 @@ context7CompatibleLibraryID (required): Exact Context7-compatible library ID (e.
 topic (optional): Focus the docs on a specific topic (e.g., "routing", "hooks")
 tokens (optional, default 10000): Max number of tokens to return. Values less than the default value of 10000 are automatically increased to 10000.
 ```
+
+## SuperClaude
+
+The current setup leverages [SuperClaude](https://github.com/SuperClaude-Org/SuperClaude_Framework). Their install is currently sort of broken so here's what I did to make it work.
+
+### `uv`
+
+`uv` is the package manager for Python projects. Install it via homebrew using:
+
+```shell
+brew install uv
+```
+
+### Install SuperClaude
+
+Create a temp directory:
+
+```shell
+mkdir tmp-superclaude
+cd tmp-superclaude
+```
+
+Initialize a python project:
+
+```shell
+uv init
+```
+
+Install SuperClaude as a dependency:
+
+```shell
+uv pip install SuperClaude
+```
+
+Run SuperClaude to add all the extensions to claude:
+
+```shell
+SueprClaude Install
+```
+
+I chose to only install the core and slash commands.
