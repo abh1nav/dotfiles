@@ -10,5 +10,5 @@ quick-terminal-screen = mouse
 quick-terminal-autohide = true
 shell-integration = zsh
 shell-integration-features = no-cursor
-theme = catppuccin-frappe
+theme = catppuccin-frappe.conf
 keybind = shift+enter=text:\n
