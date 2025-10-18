@@ -57,6 +57,19 @@ else
   echo "Ghostty is not installed, skipping config"
 fi
 
+# Install uv
+if [ "$(uname)" = "Darwin" ]; then
+  brew install uv
+else
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+
+# Install GitHub spec kit
+if [ $? -eq 0 ]; then
+  uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+else
+  echo Skipping install of GitHub Spec Kit because uv install failed
+fi
 
 # Fonts
 echo Look in the fonts directory to install the RobotoMonoNerd font.
