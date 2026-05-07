@@ -13,5 +13,9 @@ return {
     "nvim-telescope/telescope.nvim",
     "neovim/nvim-lspconfig",
   },
-  opts = {},
+  opts = {
+    -- LSP is configured in lsp.lua via vim.lsp.config; disable the built-in setup
+    -- to avoid the deprecated require('lspconfig') framework warning.
+    server = { override = false },
+  },
 }

@@ -102,23 +102,29 @@ return { -- LSP Configuration & Plugins
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-    local nvim_lspconfig = require "lspconfig"
     local servers = {
       -- Go
       gopls = {},
 
       -- TypeScript setup should account for Deno
       ts_ls = {
-        root_dir = nvim_lspconfig.util.root_pattern "package.json",
+        root_dir = function(fname)
+          return vim.fs.root(fname, { "package.json" })
+        end,
         single_file_support = false,
       },
 
       denols = {
-        root_dir = nvim_lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+        root_dir = function(fname)
+          return vim.fs.root(fname, { "deno.json", "deno.jsonc" })
+        end,
       },
 
       -- Use Jedi for Python
       jedi_language_server = {},
+
+      -- Tailwind CSS (managed here; tailwind-tools handles colours/completion)
+      tailwindcss = {},
 
       -- Lua setup
       lua_ls = {
@@ -131,6 +137,13 @@ return { -- LSP Configuration & Plugins
         },
       },
     }
+
+    -- Configure each server with the new vim.lsp.config API (nvim 0.11+).
+    -- mason-lspconfig will call vim.lsp.enable() for each installed server.
+    for server_name, server in pairs(servers) do
+      server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+      vim.lsp.config(server_name, server)
+    end
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
@@ -148,17 +161,7 @@ return { -- LSP Configuration & Plugins
     })
     require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
-    require("mason-lspconfig").setup {
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
-          server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-          require("lspconfig")[server_name].setup(server)
-        end,
-      },
-    }
+    -- mason-lspconfig automatically enables installed servers via vim.lsp.enable()
+    require("mason-lspconfig").setup()
   end,
 }
