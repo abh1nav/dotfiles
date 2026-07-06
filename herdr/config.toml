@@ -1,10 +1,16 @@
 [keys]
 prefix = "ctrl+a"
+detach = "prefix+d"
+new_workspace = "prefix+shift+c"
+rename_tab = "prefix+comma"
 split_horizontal = "prefix+h"
 split_vertical = "prefix+v"
-rename_tab = "prefix+comma"
-new_workspace = "prefix+shift+c"
 rename_workspace = "prefix+period"
+workspace_picker = "prefix+s"
+
+[theme]
+auto_switch = false
+name = "catppuccin"
 
 [ui.toast]
 delivery = "system"
@@ -12,6 +18,5 @@ delivery = "system"
 [ui]
 show_agent_labels_on_pane_borders = true
 
-[theme]
-name = "nord"
-auto_switch = false
+[worktrees]
+directory = "~/src/herdr-worktrees"
