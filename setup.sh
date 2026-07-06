@@ -57,18 +57,16 @@ else
   echo "Ghostty is not installed, skipping config"
 fi
 
+# Link herdr config
+mkdir -p $HOME/.config/herdr
+cd $HOME/.config/herdr/
+ln -s $HOME/.dotfiles/herdr/config.toml
+
 # Install uv
 if [ "$(uname)" = "Darwin" ]; then
   brew install uv
 else
   curl -LsSf https://astral.sh/uv/install.sh | sh
-fi
-
-# Install GitHub spec kit
-if [ $? -eq 0 ]; then
-  uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
-else
-  echo Skipping install of GitHub Spec Kit because uv install failed
 fi
 
 # Fonts

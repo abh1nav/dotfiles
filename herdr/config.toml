@@ -1,0 +1,17 @@
+[keys]
+prefix = "ctrl+a"
+split_horizontal = "prefix+h"
+split_vertical = "prefix+v"
+rename_tab = "prefix+comma"
+new_workspace = "prefix+shift+c"
+rename_workspace = "prefix+period"
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[theme]
+name = "nord"
+auto_switch = false
