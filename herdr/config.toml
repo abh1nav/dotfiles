@@ -1,3 +1,5 @@
+onboarding = false
+
 [keys]
 prefix = "ctrl+a"
 detach = "prefix+d"
@@ -5,6 +7,7 @@ new_workspace = "prefix+shift+c"
 rename_tab = "prefix+comma"
 split_horizontal = "prefix+h"
 split_vertical = "prefix+v"
+remove_worktree = "prefix+shift+f"
 rename_workspace = "prefix+period"
 workspace_picker = "prefix+s"
 
