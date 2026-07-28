@@ -8,6 +8,7 @@ cd $HOME
 claude_dir="$HOME/.claude"
 agents_dir="$HOME/.claude/agents"
 settings_file="$HOME/.claude/settings.json"
+claude_md="$HOME/.claude/CLAUDE.md"
 
 # Fetch the submodules directory
 git submodule update --init --recursive
@@ -33,30 +34,27 @@ if [ -d "$claude_dir" ]; then
 fi
 #
 #
-# Add the notification hook
+# Setup the settings link
 #
-# 1. Check if jq is installed
-if ! command -v jq >/dev/null 2>&1; then
-   echo "❌ Error: jq is required but not installed."
-   echo "Please install it with: brew install jq"
-   exit 1
+# 1. If settings.json exists as a regular file (not a symlink), back it up
+if [ -f "$settings_file" ] && [ ! -L "$settings_file" ]; then
+    echo "Backing up existing $settings_file to $settings_file.bak"
+    mv "$settings_file" "$settings_file.bak"
 fi
 #
-# 2. Create settings.json if it doesn't exist
-if [ ! -f "$settings_file" ]; then
-   echo '{}' > "$settings_file"
+# 2. Create (or refresh) the symlink to the dotfiles settings
+ln -sf "$HOME/.dotfiles/claude/settings.json" "$settings_file"
+echo "✅ Settings symlink created: $settings_file -> $HOME/.dotfiles/claude/settings.json"
+#
+#
+# Setup the CLAUDE.md link
+#
+# 1. If CLAUDE.md exists as a regular file (not a symlink), back it up
+if [ -f "$claude_md" ] && [ ! -L "$claude_md" ]; then
+    echo "Backing up existing $claude_md to $claude_md.bak"
+    mv "$claude_md" "$claude_md.bak"
 fi
 #
-# 3. Use jq to ensure the Notification hook exists
-jq '.hooks.Notification = [
-   {
-       "matcher": "",
-       "hooks": [
-           {
-               "type": "command",
-               "command": "osascript -e \"display notification \\\"Claude Code needs your attention\\\" with title \\\"Claude Code\\\"\""
-           }
-       ]
-   }
-]' "$settings_file" > "$settings_file.tmp" && mv "$settings_file.tmp" "$settings_file"
-echo "✅ Notification hook configured in $settings_file"
+# 2. Create (or refresh) the symlink to the dotfiles CLAUDE.md
+ln -sf "$HOME/.dotfiles/claude/CLAUDE.md" "$claude_md"
+echo "✅ CLAUDE.md symlink created: $claude_md -> $HOME/.dotfiles/claude/CLAUDE.md"
