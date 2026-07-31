@@ -48,6 +48,14 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 cd $HOME
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
+# Load nvm, install and activate node, then install pnpm and pi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install 22.22.3
+nvm use 22.22.3
+npm install -g "pnpm@>=11.9"
+pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
+
 # Check if Ghostty is installed
 if command -v ghostty > /dev/null 2>&1; then
   echo "Ghostty is installed, linking config"
