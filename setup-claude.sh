@@ -7,6 +7,7 @@ cd $HOME
 
 claude_dir="$HOME/.claude"
 agents_dir="$HOME/.claude/agents"
+output_styles_dir="$HOME/.claude/output-styles"
 settings_file="$HOME/.claude/settings.json"
 claude_md="$HOME/.claude/CLAUDE.md"
 
@@ -31,6 +32,26 @@ fi
 # 3. If .claude exists, echo Hello world
 if [ -d "$claude_dir" ]; then
     cd $claude_dir && ln -s $HOME/.dotfiles/claude/agents
+fi
+#
+#
+# Setup the output-styles link
+#
+# 1. If .claude/output-styles exists and is non-empty, show error and exit
+if [ -d "$output_styles_dir" ] && [ -n "$(ls -A "$output_styles_dir" 2>/dev/null)" ]; then
+    echo "$output_styles_dir is non empty - delete it and try again"
+    exit 1
+fi
+#
+# 2. If .claude/output-styles exists (and we're still here, so it must be empty), remove it
+if [ -d "$output_styles_dir" ]; then
+    echo "Removing empty directory $output_styles_dir"
+    rmdir "$output_styles_dir"
+fi
+#
+# 3. If .claude exists, create the symlink
+if [ -d "$claude_dir" ]; then
+    cd $claude_dir && ln -s $HOME/.dotfiles/claude/output-styles
 fi
 #
 #
