@@ -38,6 +38,13 @@ cd $HOME/.config
 rm -Rf nvim
 ln -s $HOME/.dotfiles/nvim
 
+# Install tree-sitter CLI (nvim-treesitter's main branch needs it to build parsers)
+if [ "$(uname)" = "Darwin" ]; then
+  brew install tree-sitter-cli
+else
+  cargo install --locked tree-sitter-cli
+fi
+
 # Link tmux config and install Tmux Plugin Manager
 cd $HOME
 ln -s $HOME/.dotfiles/.tmux.conf
